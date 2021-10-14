@@ -34,13 +34,13 @@ export default function ngAdd(options: Schema): Rule {
 
     // Installing dependencies
     const angularCoreVersion = getPackageVersionFromPackageJson(tree, '@angular/core') !;
-    const angularLocalizeVersion = getPackageVersionFromPackageJson(tree, '@angular/localize');
+    const angularLocalizeVersion = getPackageVersionFromPackageJson(tree, '@angular/localize', true);
 
     addPackageToPackageJson(tree, '@ng-bootstrap/ng-bootstrap', `^${NG_BOOTSTRAP_VERSION}`);
     addPackageToPackageJson(tree, 'bootstrap', `^${BOOTSTRAP_VERSION}`);
 
     if (angularLocalizeVersion === null) {
-      addPackageToPackageJson(tree, '@angular/localize', angularCoreVersion);
+      addPackageToPackageJson(tree, '@angular/localize', angularCoreVersion, true);
     }
 
     context.addTask(new RunSchematicTask('ng-add-setup-project', options), [
