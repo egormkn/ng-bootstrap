@@ -130,7 +130,7 @@
     "karma-jasmine": "~5.0.1",
     "karma-safari-launcher": "^1.0.0",
     "karma-sauce-launcher": "^4.3.6",
-    "marked": "^1.2.3",
+    "marked": "^4.0.10",
     "ng-packagr": "^14.1.0",
     "nyc": "14.1.1",
     "prismjs": "1.22.0",
